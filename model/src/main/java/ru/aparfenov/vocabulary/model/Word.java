@@ -6,27 +6,28 @@ import java.util.List;
  * Created by ArtemParfenov on 05.02.2019.
  */
 public class Word {
-    /**translations of the word*/
-    private List<Translation> translations;
-    private String word;
+    /**translations of the word on Russian*/
+    private List<Translation> translationsRu;
+    /**word in english*/
+    private String wordEn;
 
-    public Word(String word) {
-        this.word = word;
+    public Word(String wordEn) {
+        this.wordEn = wordEn;
     }
 
-    public List<Translation> getTranslations() {
-        return translations;
+    public List<Translation> getTranslationsRu() {
+        return translationsRu;
     }
 
-    public void setTranslations(List<Translation> translations) {
-        this.translations = translations;
+    public void setTranslationsRu(List<Translation> translationsRu) {
+        this.translationsRu = translationsRu;
     }
 
-    public String getWord() {
-        return word;
+    public String getWordEn() {
+        return wordEn;
     }
 
-    public void setWord(String word) {
-        this.word = word;
+    public void setWordEn(String wordEn) {
+        this.wordEn = wordEn;
     }
 }

@@ -34,5 +34,14 @@
 
     </c:if>
 
+    <form method="POST" action="mainPage">
+        <p>
+            Word: <input type="text" name="word"> <br>
+            Translation: <input type="text" name="translate"> <br>
+            Transcription: <input type="text" name="transcription"> <br>
+            <input type="submit" value="singleton"/>
+        </p>
+    </form>
+
 </body>
 </html>
