@@ -2,10 +2,12 @@ package ru.aparfenov.vocabulary.model;
 
 import java.util.List;
 
-/** represents a word in English
+/** Domain object, represents a word in English
  * Created by ArtemParfenov on 05.02.2019.
  */
 public class Word {
+    /**word`s UUID*/
+    private String uid;
     /**translations of the word on Russian*/
     private List<Translation> translationsRu;
     /**word in english*/
@@ -29,5 +31,13 @@ public class Word {
 
     public void setWordEn(String wordEn) {
         this.wordEn = wordEn;
+    }
+
+    public String getUid() {
+        return uid;
+    }
+
+    public void setUid(String uid) {
+        this.uid = uid;
     }
 }

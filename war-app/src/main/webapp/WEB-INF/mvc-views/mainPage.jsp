@@ -7,7 +7,10 @@
 --%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%--<%@ page import="ru.aparfenov.vocabulary.model.dto.WordDto" %>--%>
 <html>
+
 <head>
     <title>Main page</title>
 </head>
@@ -16,32 +19,48 @@
     <c:if test="${not empty mainPageModel.problemWords}">
 
         <ul>
-            <c:forEach var="listValue" items="${mainPageModel.problemWords}">
-                <li>${listValue}</li>
-            </c:forEach>
+            <table border="1">
+                <c:forEach var="listValue" items="${mainPageModel.problemWords}">
+                    <tr><td>${listValue.wordEn} - ${listValue.translationsRu}</td></tr>
+                </c:forEach>
+            </table>
         </ul>
-
-
 
     General words:
     </c:if><c:if test="${not empty mainPageModel.generalWords}">
 
         <ul>
-            <c:forEach var="listValue" items="${mainPageModel.generalWords}">
-                <li>${listValue}</li>
-            </c:forEach>
+            <table border="1">
+                <c:forEach var="listValue" items="${mainPageModel.generalWords}">
+                    <tr><td>${listValue}</td></tr>
+                </c:forEach>
+            </table>
         </ul>
 
     </c:if>
 
-    <form method="POST" action="mainPage">
-        <p>
-            Word: <input type="text" name="word"> <br>
-            Translation: <input type="text" name="translate"> <br>
-            Transcription: <input type="text" name="transcription"> <br>
-            <input type="submit" value="singleton"/>
-        </p>
-    </form>
+    Add new
+    <form:form method="POST"
+               action="add-word" modelAttribute="new-word">
+        <table>
+            <tr>
+                <td><form:label path="en">En</form:label></td>
+                <td><form:input path="en"/></td>
+            </tr>
+            <tr>
+                <td><form:label path="ru">Tr</form:label></td>
+                <td><form:input path="ru"/></td>
+            </tr>
+            <tr>
+                <td><form:label path="transcr">
+                    Word transcription</form:label></td>
+                <td><form:input path="transcr"/></td>
+            </tr>
+            <tr>
+                <td><input type="submit" value="Submit"/></td>
+            </tr>
+        </table>
+    </form:form>
 
 </body>
 </html>

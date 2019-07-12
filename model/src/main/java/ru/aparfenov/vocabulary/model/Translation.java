@@ -1,9 +1,11 @@
 package ru.aparfenov.vocabulary.model;
 
-/**translation for the word
+/**Translation domain object for the word
  * Created by ArtemParfenov on 05.02.2019.
  */
 public class Translation {
+    /**translation UUID*/
+    private String uid;
     /**word`s transcription*/
     private Transcription transcr;
     /**the translation*/
@@ -23,5 +25,13 @@ public class Translation {
 
     public void setTranslation(String translation) {
         this.translation = translation;
+    }
+
+    public String getUid() {
+        return uid;
+    }
+
+    public void setUid(String uid) {
+        this.uid = uid;
     }
 }
