@@ -14,7 +14,7 @@ import ru.aparfenov.vocabulary.model.exceptions.WordNotFoundException;
 import ru.aparfenov.vocabulary.mvc.model.MainPageModel;
 import ru.aparfenov.vocabulary.storage.WordStorageDao;
 
-import javax.validation.Valid;
+//import javax.validation.Valid;
 
 /** MVC controller for the main application page
  * Created by ArtemParfenov on 05.02.2019.
@@ -38,7 +38,7 @@ public class MainPageController {
 
     @RequestMapping(value = "/add-word", method = RequestMethod.POST)
     public ModelAndView addWord(
-            @Valid @ModelAttribute("new-word") WordMvcViewDto wordViewDto
+            /*@Valid*/ @ModelAttribute("new-word") WordMvcViewDto wordViewDto
             ) {
         wordStorageDao.addWord(Converters.fromViewDto(wordViewDto));
         //route request to the mainPage url
