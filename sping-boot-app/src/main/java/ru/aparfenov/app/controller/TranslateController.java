@@ -17,8 +17,15 @@ public class TranslateController {
 
     @GetMapping("/get")
     public void translate() {
-        log.debug("/translate was called");
+        if (log.isTraceEnabled()) {
+            log.trace("/translate start");
+        }
         System.out.println("/translate ");
+        wordService.traslate();
+
+        if (log.isTraceEnabled()) {
+            log.trace("/translate end");
+        }
     }
 
     public void updateTranslation() {
