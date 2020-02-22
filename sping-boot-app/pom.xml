@@ -16,11 +16,17 @@
     </parent>
 
     <dependencies>
-        <!-- Typical dependency for a web application -->
+        <!-- Typical dependency for a web application. Includes Tomcat as an embedded server -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
+        <!--for unit tests-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+        </dependency>
+
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>

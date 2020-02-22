@@ -8,7 +8,7 @@ import ru.aparfenov.app.exception.StorageConnectionException;
  */
 @Component
 public class WordService {
-    public void traslate() {
-        throw new StorageConnectionException();
+    public String traslate() {
+        return "Hello World!";
     }
 }
