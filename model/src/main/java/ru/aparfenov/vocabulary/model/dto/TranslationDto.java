@@ -1,27 +1,22 @@
 package ru.aparfenov.vocabulary.model.dto;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.experimental.Accessors;
+
 /**
  * Created by ArtemParfenov on 09.07.2019.
  */
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
+@Accessors(chain = true)
 public class TranslationDto {
     /**the translation*/
     private String translation;
     /**word`s transcription*/
     private String transcr;
-
-    public String getTranslation() {
-        return translation;
-    }
-
-    public void setTranslation(String translation) {
-        this.translation = translation;
-    }
-
-    public String getTranscr() {
-        return transcr;
-    }
-
-    public void setTranscr(String transcr) {
-        this.transcr = transcr;
-    }
 }

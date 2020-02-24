@@ -1,12 +1,22 @@
 package ru.aparfenov.vocabulary.model.dto;
 
-import ru.aparfenov.vocabulary.model.Translation;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.experimental.Accessors;
 
 import java.util.List;
 
 /** DTO object for the Word
  * Created by ArtemParfenov on 10.07.2019.
  */
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+@Accessors(chain = true)
 public class WordDto {
     /**word`s UUID*/
     private String uid;
@@ -14,28 +24,4 @@ public class WordDto {
     private String wordEn;
     /**translations of the word on Russian*/
     private List<TranslationDto> translationsRu;
-
-    public String getUid() {
-        return uid;
-    }
-
-    public void setUid(String uid) {
-        this.uid = uid;
-    }
-
-    public String getWordEn() {
-        return wordEn;
-    }
-
-    public void setWordEn(String wordEn) {
-        this.wordEn = wordEn;
-    }
-
-    public List<TranslationDto> getTranslationsRu() {
-        return translationsRu;
-    }
-
-    public void setTranslationsRu(List<TranslationDto> translationsRu) {
-        this.translationsRu = translationsRu;
-    }
 }
