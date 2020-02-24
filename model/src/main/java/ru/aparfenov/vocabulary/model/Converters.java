@@ -3,7 +3,6 @@ package ru.aparfenov.vocabulary.model;
 import ru.aparfenov.vocabulary.model.dto.TranslationDto;
 import ru.aparfenov.vocabulary.model.dto.WordDto;
 import ru.aparfenov.vocabulary.model.dto.WordMvcViewDto;
-import ru.aparfenov.vocabulary.model.requests.AddNewWordRequest;
 
 import java.util.ArrayList;
 import java.util.List;
