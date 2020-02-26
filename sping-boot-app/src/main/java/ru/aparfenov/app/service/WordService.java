@@ -1,8 +1,8 @@
 package ru.aparfenov.app.service;
 
 import org.springframework.stereotype.Component;
-import ru.aparfenov.app.exception.StorageConnectionException;
-import ru.aparfenov.vocabulary.model.Word;
+import ru.aparfenov.vocabulary.model.dto.CommonWordsDto;
+import ru.aparfenov.vocabulary.model.dto.ProblemWordsDto;
 import ru.aparfenov.vocabulary.model.dto.WordDto;
 
 /**
@@ -10,6 +10,14 @@ import ru.aparfenov.vocabulary.model.dto.WordDto;
  */
 @Component
 public class WordService {
+    public CommonWordsDto getCommonWords() {
+        return CommonWordsDto.builder().build();
+    }
+
+    public ProblemWordsDto getProblemWords() {
+        return ProblemWordsDto.builder().build();
+    }
+
     public String traslate(WordDto wordDto) {
         return "Hello World!";
     }

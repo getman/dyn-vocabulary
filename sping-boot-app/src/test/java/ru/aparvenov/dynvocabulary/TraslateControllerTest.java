@@ -13,6 +13,8 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import ru.aparfenov.app.Application;
 import ru.aparfenov.app.service.WordService;
+import ru.aparfenov.vocabulary.model.dto.CommonWordsDto;
+import ru.aparfenov.vocabulary.model.dto.ProblemWordsDto;
 import ru.aparfenov.vocabulary.model.dto.WordDto;
 
 import static org.mockito.BDDMockito.given;
@@ -40,6 +42,22 @@ public class TraslateControllerTest {
 
     @Autowired
     private ObjectMapper objectMapper;
+
+    @Test
+    public void shouldCommonWordListMethodResponseOk() throws Exception {
+        given(wordService.getCommonWords()).willReturn(CommonWordsDto.builder().build());
+        mvc.perform(get("/common-word-list")
+                .contentType(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk());
+    }
+
+    @Test
+    public void shouldProblemWordListMethodResponseOk() throws Exception {
+        given(wordService.getProblemWords()).willReturn(ProblemWordsDto.builder().build());
+        mvc.perform(get("/problem-word-list")
+                .contentType(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk());
+    }
 
     @Test
     public void shouldTranslateMethodResponseOk() throws Exception {
