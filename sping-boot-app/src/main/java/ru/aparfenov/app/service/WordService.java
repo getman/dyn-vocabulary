@@ -5,6 +5,8 @@ import ru.aparfenov.vocabulary.model.dto.CommonWordsDto;
 import ru.aparfenov.vocabulary.model.dto.ProblemWordsDto;
 import ru.aparfenov.vocabulary.model.dto.WordDto;
 
+import java.util.ArrayList;
+
 /**
  * Created by ArtemParfenov on 02.02.2020.
  */
@@ -15,7 +17,13 @@ public class WordService {
     }
 
     public ProblemWordsDto getProblemWords() {
-        return ProblemWordsDto.builder().build();
+        return ProblemWordsDto.builder()
+                .problemWords(new ArrayList<WordDto>(){{
+                    add(WordDto.builder().wordEn("we").build());
+                    add(WordDto.builder().wordEn("er").build());
+                    add(WordDto.builder().wordEn("rt").build());
+                }})
+                .build();
     }
 
     public String traslate(WordDto wordDto) {

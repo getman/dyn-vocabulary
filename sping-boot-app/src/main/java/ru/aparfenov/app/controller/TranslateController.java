@@ -32,6 +32,7 @@ public class TranslateController {
     }
 
     /**retrieves the list of problem words, the words that the user forgets permanently*/
+    @CrossOrigin("*")
     @GetMapping("/problem-word-list")
     public ResponseEntity<ProblemWordsDto> loadProblemWords() {
         if (log.isTraceEnabled()) {
