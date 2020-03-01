@@ -5,28 +5,52 @@
       src="https://code.jquery.com/jquery-3.4.1.js"
       integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
       crossorigin="anonymous"></script>
-<script>
-$(document).ready(function(){
-$.ajax({
-        "url" : "http://localhost:8083/problem-word-list",
-        "type" : "GET",
-        "dataType": "json",
-        "success" : function(data) {              
-                var projectData=data;
-                var txt='';
-                for (i in projectData.problemWords) {
-                  txt += projectData.problemWords[i].wordEn.concat(', ');
-                }
-                $("#projectInfo").text(txt);
-        },
-        "error" : function(response,error)
-        {
-            console.log("ERROR: "+JSON.stringify(response));
-        }
-    });
-});
-</script>
+
+
 </head>
-<body> <h2 id="projectInfo"></h2> 
-  Hello world
+<body><h2>Problem words</h2>
+
+<table id="tbl-problem-words" border="1">
+    <tr>
+        <th>Problem words</th>
+    </tr>
+    <tr>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+    </tr>
+    
+</table>
+<h2>Common words</h2>    
+<table id="tbl-common-words" border="1">
+    <tr>
+        <th>Common words</th>
+    </tr>
+    <tr>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+    </tr>    
+</table>
+    <script src="jquery-for-rest.js"></script>
 </body> </html>

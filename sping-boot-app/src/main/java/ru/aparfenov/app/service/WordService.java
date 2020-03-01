@@ -13,15 +13,21 @@ import java.util.ArrayList;
 @Component
 public class WordService {
     public CommonWordsDto getCommonWords() {
-        return CommonWordsDto.builder().build();
+        return CommonWordsDto.builder()
+                .commonWords(new ArrayList<WordDto>(){{
+                    add(WordDto.builder().wordEn("common word 1").build());
+                    add(WordDto.builder().wordEn("common word 2").build());
+                    add(WordDto.builder().wordEn("common word 3").build());
+                }})
+                .build();
     }
 
     public ProblemWordsDto getProblemWords() {
         return ProblemWordsDto.builder()
                 .problemWords(new ArrayList<WordDto>(){{
-                    add(WordDto.builder().wordEn("we").build());
-                    add(WordDto.builder().wordEn("er").build());
-                    add(WordDto.builder().wordEn("rt").build());
+                    add(WordDto.builder().wordEn("problem word 1").build());
+                    add(WordDto.builder().wordEn("problem word 2").build());
+                    add(WordDto.builder().wordEn("problem word 3").build());
                 }})
                 .build();
     }

@@ -20,6 +20,7 @@ public class TranslateController {
     private WordService wordService;
 
     /**retrieves the list of commonly used words */
+    @CrossOrigin("*")
     @GetMapping("/common-word-list")
     public ResponseEntity<CommonWordsDto> loadCommonWords() {
         if (log.isTraceEnabled()) {
