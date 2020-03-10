@@ -28,21 +28,21 @@ public class MyExceptionHandler extends ResponseEntityExceptionHandler {
     }
 
     @ExceptionHandler(StorageConnectionException.class)
-    protected ResponseEntity<Object> storageConnectionException(RuntimeException ex, WebRequest request) {
+    protected ResponseEntity<Object> storageConnectionException(StorageConnectionException ex, WebRequest request) {
         log.error("StorageConnectionException", ex);
         String bodyOfResponse = "Storage connection error";
         return handleExceptionInternal(ex, bodyOfResponse, new HttpHeaders(), HttpStatus.INTERNAL_SERVER_ERROR, request);
     }
 
     @ExceptionHandler(StorageInternalException.class)
-    protected ResponseEntity<Object> storageInternalException(RuntimeException ex, WebRequest request) {
+    protected ResponseEntity<Object> storageInternalException(StorageInternalException ex, WebRequest request) {
         log.error("StorageInternalException", ex);
         String bodyOfResponse = "Error inside the storage occured";
         return handleExceptionInternal(ex, bodyOfResponse, new HttpHeaders(), HttpStatus.INTERNAL_SERVER_ERROR, request);
     }
 
     @ExceptionHandler(UnknownWordException.class)
-    protected ResponseEntity<Object> unknownWordException(RuntimeException ex, WebRequest request) {
+    protected ResponseEntity<Object> unknownWordException(UnknownWordException ex, WebRequest request) {
         log.error("UnknownWordException", ex);
         String bodyOfResponse = "Couldn`t find a word";
         return handleExceptionInternal(ex, bodyOfResponse, new HttpHeaders(), HttpStatus.INTERNAL_SERVER_ERROR, request);

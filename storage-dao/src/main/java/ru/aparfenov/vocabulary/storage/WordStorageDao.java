@@ -15,6 +15,8 @@ public interface WordStorageDao {
     public List<Word> getProblemWords();
     /**adds a new word to the storage*/
     public void addWord(Word newWord);
+    /**adds an existed word to the problem list*/
+    public void addWordToProblem(String problemWordUid);
     /**updates an existing word*/
     public void updateWord(Word targetWord) throws WordNotFoundException;
     /**removes an existing word*/

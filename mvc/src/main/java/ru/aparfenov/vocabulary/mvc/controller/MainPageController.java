@@ -48,7 +48,7 @@ public class MainPageController {
     @RequestMapping(value = "/update-word", method = RequestMethod.POST)
     public ModelAndView updateWord(@RequestBody WordDto newWordRequest) {
         try {
-            wordStorageDao.updateWord(Converters.fromDto(newWordRequest));
+            wordStorageDao.updateWord(Converters.fromWordDto(newWordRequest));
         } catch (WordNotFoundException e) {
             e.printStackTrace();
         }

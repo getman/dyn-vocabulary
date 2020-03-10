@@ -38,6 +38,11 @@ public class WordStorageDaoSqlLite implements WordStorageDao {
     }
 
     @Override
+    public void addWordToProblem(String problemWordUid) {
+
+    }
+
+    @Override
     public void updateWord(Word targetWord) throws WordNotFoundException {
 
     }

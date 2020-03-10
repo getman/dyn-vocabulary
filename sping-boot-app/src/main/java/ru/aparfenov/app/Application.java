@@ -10,7 +10,7 @@ import org.springframework.context.annotation.ComponentScan;
  */
 @Slf4j
 @SpringBootApplication
-@ComponentScan(basePackages = {"ru.aparfenov.app"})
+@ComponentScan(basePackages = {"ru.aparfenov.app", "ru.aparfenov.vocabulary.storage"})
 public class Application {
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
